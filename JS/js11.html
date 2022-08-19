@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Small{
+            height: 77px;width: 102px;
+        }
+        .Medium{
+            height: 192px;width: 256px;
+        }
+        .Large{
+            height: 384px;width: 512px;
+        }
+    </style>
+    <script>
+        function setimagesize(value){
+           document.getElementById("img1").className=value;
+        }
+    </script>
+</head>
+<body>
+    <h1>Image Resizing</h1>
+    <hr>
+    <label for="chinhSIZE">Scale</label>
+    <input type="radio" value="Small" name="scaler" onclick="setimagesize(this.value)">10%
+    <input type="radio" value="Medium"  name="scaler" onclick="setimagesize(this.value)">25%
+    <input type="radio"value="Large"  name="scaler" checked onclick="setimagesize(this.value)">50%
+    <br>
+    <img id="img1" class="Large" src="../Images/pointlobos.jpg" >
+</body>
+</html>

@@ -1,0 +1,55 @@
+@charset "utf-8";
+body {
+    color:#000000;
+    background-color:#ffffff;
+    font-size:12px;
+    font-family:arial, verdana, sans-serif;
+   }
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:blue;
+    font-size: 15px;
+}
+
+.link>a:hover{
+    color: yellow;
+    font: size 30px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+
+.link {
+    background-color: aqua;
+    color: #ffffff;
+    font-size: 20px;
+}
+.img1 {
+    height: 200px;
+    width: 200px;
+    background: url('../Images/coffee.png') center / cover no-repeat;
+    float: right;
+}
+img {
+    object-fit: contain;
+}
+.para >p,h2
+{
+    color: rgb(140, 144, 147);
+}
+
+button{
+    color: #ffffff;
+    background-color: aqua;
+    font-size: 20px;
+    border: unset;
+}
+button:hover {
+    color:yellow;
+    font-size: 25px;
+    cursor: pointer;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vanban{
+            text-align: center;
+            height: 200px;
+            width: 300px;
+        }
+        #header{
+            background-color: red;
+            color:yellow;
+            text-align: center;
+            height: 200px;
+            width: 300px;
+        }
+
+    </style>
+    <script>
+        function Changecolor(){
+            var bkcolor = document.getElementById("bgcolor1").value;
+            var textcolor = document.getElementById("color1").value;
+            document.getElementById("vanban").innerHTML=document.getElementById("text1").value;
+            document.getElementById("vanban").style.backgroundColor=bkcolor;
+            document.getElementById("vanban").style.color=textcolor;
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h2 id="vanban">WELCOME HTML5!</h2>
+    </div>
+    <label for="text1">Nhập nội dung:</label>
+    <input type="text" placeholder="Nhập vào nội dung" id="text1">
+    <br>
+    <label for="bgcolor1">Màu nền:</label>
+    <input type="color" placeholder="Nhập vào nội dung" id="bgcolor1">
+    <br>
+    <label for="color1">Màu chữ:</label>
+    <input type="color" placeholder="Nhập vào nội dung" id="color1">
+    <br>
+    <input type="button" onclick="Changecolor()" value="Thực hiện">
+
+</body>
+</html>
