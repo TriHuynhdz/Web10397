@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js06</title>
+    <style>
+        caption{
+            font-weight: 700;
+            font-size: large;
+            text-align: center;
+        }
+        table{
+            margin: auto;
+        }
+    </style>
+    <script>
+        function DangKy(){
+            var ten=document.getElementById("name").value;
+            var mk =document.getElementById("pass").value;
+            var ngaysinh= new date(document.getElementById("Born").value);
+            var Tuoi= new date().getFullYear-ngaysinh.getFullYear();
+            var Gioitinh= document.getElementsByName("sex");
+            var VanDe= document.getElementById("content").value;
+            var oGT='';
+            for(var i=0; i<Gioitinh.length ;i++)
+            {
+                if(Gioitinh[i].checked){
+                    oGT=Gioitinh[i].value;
+                    break;
+                }
+                else
+                    continue;  
+            }
+            if(oGT=='0')
+            {
+                Gioitinh="Nam";
+            }
+            else if(oGT=='1')
+            {
+                Gioitinh="Nữ";
+            }
+            if(Gioitinh=="Nam"||Gioitinh=="Nữ")
+            {
+                var out=
+                "Chào mừng "+ten+"\n"
+                +"Bạn là "+Gioitinh+"\n"
+                +"Mật khẩu của bạn có "+mk.length+" ký tự \n"
+                +"Tuổi của bạn là "+Tuoi+"\n"
+                +"Vấn đề bạn quan tâm là "+VanDe;
+                document.getElementById("kq").innerHTML=out;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        <table border="1">
+            <caption>ĐĂNG KÝ THÀNH VIÊN</caption>
+            <tr>
+                <td><label >Tên đăng nhập</label></td>
+                <td><input type="text" id="name" placeholder="Hãy nhập vào tên đăng nhập" required tabindex="1"></td>
+            </tr>
+            <tr>
+                <td><label >Mật khẩu</label></td>
+                <td><input type="password" id="pass" placeholder="Hãy nhập vào mật khẩu" required tabindex="2"></td>
+            </tr>
+            <tr>
+                <td><label >Ngày sinh</label></td>
+                <td><input type="date" id="Born" tabindex="3"></td>
+            </tr>
+            <tr>
+                <td><label>Giới tính</label></td>
+                <td><input type="radio" name="sex" value="0" checked>Nam <input type="radio" name="sex" value="1">Nữ</td>
+            </tr>
+            <tr>
+                <td><label >Vấn đề bạn quan tâm</label></td>
+                <td> 
+                    <select id="content">
+                        <option value="Kinh tế" selected>Kinh tế</option>
+                        <option value="Thể thao">Thể thao</option>
+                        <option value="Văn hóa nghệ thuật">Văn học nghệ thuật</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="DangKy()">Đăng Ký</button></td>
+                <td><button type="reset">Hủy</button></td>
+            </tr>
+            <tr>
+                    <td colspan="2"><textarea  id="kq" cols="50" rows="10" readonly></textarea></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
