@@ -16,40 +16,36 @@
         }
     </style>
     <script>
-        function DangKy(){
-            var ten=document.getElementById("name").value;
-            var mk =document.getElementById("pass").value;
-            var ngaysinh= new date(document.getElementById("Born").value);
-            var Tuoi= new date().getFullYear-ngaysinh.getFullYear();
-            var Gioitinh= document.getElementsByName("sex");
-            var VanDe= document.getElementById("content").value;
-            var oGT='';
-            for(var i=0; i<Gioitinh.length ;i++)
-            {
-                if(Gioitinh[i].checked){
-                    oGT=Gioitinh[i].value;
+        function DKTV() {
+        var tên = document.getElementById("name").value;
+        var mk = document.getElementById("password").value;
+        var Ngaysinh = new Date(document.getElementById("birthday").value);
+        var Tuổi = new Date().getFullYear() - Ngaysinh.getFullYear();
+        var Gioitinh = document.getElementsByName("sex");
+        var Vande = document.getElementById("content").value;
+        var outGT = '';
+            for(var i = 0; i < Gioitinh.length; i++) {
+                if(Gioitinh[i].checked) {
+                    outGT = Gioitinh[i].value;
                     break;
                 }
                 else
-                    continue;  
+                    continue;
             }
-            if(oGT=='0')
-            {
-                Gioitinh="Nam";
+            if(outGT == '0') { 
+                Gioitinh = "Nam"; 
             }
-            else if(oGT=='1')
-            {
-                Gioitinh="Nữ";
+            else if(outGT == '1') { 
+                Gioitinh = "Nữ"; 
             }
-            if(Gioitinh=="Nam"||Gioitinh=="Nữ")
-            {
-                var out=
-                "Chào mừng "+ten+"\n"
-                +"Bạn là "+Gioitinh+"\n"
-                +"Mật khẩu của bạn có "+mk.length+" ký tự \n"
-                +"Tuổi của bạn là "+Tuoi+"\n"
-                +"Vấn đề bạn quan tâm là "+VanDe;
-                document.getElementById("kq").innerHTML=out;
+            if(Gioitinh == "Nam" || Gioitinh == "Nữ") {
+                var out = 
+                "Chào mừng " + tên + "\n" +
+                "Bạn là " + Gioitinh + "\n" +
+                "Mật khẩu của bạn có " + mk.length + " ký tự" + "\n" +
+                "Tuổi của bạn là " + Tuổi + "\n" + 
+                "Vấn đề bạn quan tâm là " + Vande;
+                document.getElementById("kq").innerHTML = out;
             }
         }
     </script>
@@ -64,11 +60,11 @@
             </tr>
             <tr>
                 <td><label >Mật khẩu</label></td>
-                <td><input type="password" id="pass" placeholder="Hãy nhập vào mật khẩu" required tabindex="2"></td>
+                <td><input type="password" id="password" placeholder="Hãy nhập vào mật khẩu" required tabindex="2"></td>
             </tr>
             <tr>
                 <td><label >Ngày sinh</label></td>
-                <td><input type="date" id="Born" tabindex="3"></td>
+                <td><input type="date" id="birthday" tabindex="3"></td>
             </tr>
             <tr>
                 <td><label>Giới tính</label></td>
@@ -85,7 +81,7 @@
                 </td>
             </tr>
             <tr>
-                <td><button type="button" onclick="DangKy()">Đăng Ký</button></td>
+                <td><button type="button" onclick="DKTV()">Đăng Ký</button></td>
                 <td><button type="reset">Hủy</button></td>
             </tr>
             <tr>
